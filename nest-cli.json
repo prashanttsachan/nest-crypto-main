@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json.schemastore.org/nest-cli",
+	"collection": "@nestjs/schematics",
+	"sourceRoot": "apps/crypto/src",
+	"monorepo": true,
+	"root": "apps/crypto",
+	"compilerOptions": {
+		"webpack": true,
+		"tsConfigPath": "apps/crypto/tsconfig.app.json"
+	},
+	"projects": {
+		"crypto-exchange": {
+			"type": "application",
+			"root": "apps/crypto",
+			"entryFile": "main",
+			"sourceRoot": "apps/crypto/src",
+			"compilerOptions": {
+				"tsConfigPath": "apps/crypto/tsconfig.app.json"
+			}
+		},
+		"users": {
+			"type": "application",
+			"root": "apps/user",
+			"entryFile": "main",
+			"sourceRoot": "apps/user/src",
+			"compilerOptions": {
+				"tsConfigPath": "apps/user/tsconfig.app.json"
+			}
+		},
+		"common": {
+			"type": "application",
+			"root": "apps/shared",
+			"entryFile": "main",
+			"sourceRoot": "apps/shared/src",
+			"compilerOptions": {
+				"tsConfigPath": "apps/shared/tsconfig.app.json"
+			}
+		}
+	}
+}
